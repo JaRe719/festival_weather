@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/festivals")
-public class festivalController {
+public class FestivalController {
 
     @Autowired
     private FestivalRepository festivalRepository;
@@ -29,7 +29,7 @@ public class festivalController {
     @GetMapping("/get/genres")
     public ResponseEntity<ArrayList<String>> getGenres() {
         ArrayList<String> genresList = new ArrayList<>();
-        Iterable<Festival> allFestivals = (Iterable<Festival>) getAllFestivals();
+        Iterable<Festival> allFestivals = festivalRepository.findAll();
 
         for (Festival f : allFestivals) {
             if (!genresList.contains(f.getGenres())){
@@ -47,7 +47,7 @@ public class festivalController {
     @PostMapping("/add")
     public ResponseEntity<Boolean> addFestival(@RequestBody Festival newFestival) {
         Optional<Festival> existFestival = festivalRepository.findFestivalByName(newFestival.getName());
-        if (!existFestival.isPresent()) {
+        if (existFestival.isEmpty()) {
             festivalRepository.save(newFestival);
             return new ResponseEntity<>(true, HttpStatus.CREATED);
         }
