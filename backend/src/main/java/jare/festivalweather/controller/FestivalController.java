@@ -36,17 +36,15 @@ public class FestivalController {
                 genresList.add(f.getGenres());
             }
         }
-
         return new ResponseEntity<>(genresList, HttpStatus.OK);
     }
 
     @GetMapping("/get/festival/by-name")
-    public ResponseEntity<Festival> getFestivalByName(@RequestBody Festival nameOfFestival) {
-        Optional<Festival> existFestival = festivalRepository.findFestivalByName(nameOfFestival.getName());
-        return existFestival.map(festival -> new ResponseEntity<>(festival, HttpStatus.OK)).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<Festival> getFestivalByName(@RequestParam String name) {
+        Optional<Festival> existFestival = festivalRepository.findFestivalByName(name);
+        return existFestival.map(festival -> new ResponseEntity<>(festival, HttpStatus.OK))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
-
-
 
 
     @PostMapping("/add")
