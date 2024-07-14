@@ -40,6 +40,11 @@ public class FestivalController {
         return new ResponseEntity<>(genresList, HttpStatus.OK);
     }
 
+    @GetMapping("/get/festival/by-name")
+    public ResponseEntity<Festival> getFestivalByName(@RequestBody Festival nameOfFestival) {
+        Optional<Festival> existFestival = festivalRepository.findFestivalByName(nameOfFestival.getName());
+        return existFestival.map(festival -> new ResponseEntity<>(festival, HttpStatus.OK)).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
 
 
