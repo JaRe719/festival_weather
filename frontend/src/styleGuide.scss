@@ -1,3 +1,75 @@
+// -----------------------------------------------------------------------
+// Fonts
+// -----------------------------------------------------------------------
+
+@font-face {
+    font-family: Dosis;
+    src: url("./assets/fonts/Dosis-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: CrimsonPro-regular;
+    src: url("./assets/fonts/CrimsonPro-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: CrimsonPro-italics;
+    src: url("./assets/fonts/CrimsonPro-Italic-VariableFont_wght.ttf");
+}
+
+@mixin Header-reg-48 {
+    font-family: CrimsonPro-regular, serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+@mixin Header-reg-32 {
+    font-family: CrimsonPro-regular, serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+@mixin Header-reg-24 {
+    font-family: CrimsonPro-regular, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+@mixin Header-reg-18 {
+    font-family: CrimsonPro-regular, serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+@mixin Header-ital-48 {
+    font-family: CrimsonPro-italics, serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+@mixin Header-ital-32 {
+    font-family: CrimsonPro-italics, serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+@mixin Header-ital-24 {
+    font-family: CrimsonPro-italics, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+@mixin Header-ital-18 {
+    font-family: CrimsonPro-italics, serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+@mixin Main-text-reg {
+    font-family: Dosis, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+@mixin Main-text-bold {
+    font-family: Dosis, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+// -----------------------------------------------------------------------
+// Color-palette
+// -----------------------------------------------------------------------
+
 $base-color-300: #D8CFAF;
 $base-color-500: #B7A76C;
 $base-color-300: #7F713E;
@@ -17,4 +89,14 @@ $grey-600: #4C585C;
 $grey-700: #363E41;
 $grey-900: #1D2223;
 
-$test: 10px bold;
+
+// -----------------------------------------------------------------------
+// Images
+// -----------------------------------------------------------------------
+
+$logo: "../../assets/images/logo.png";
+$background: "../../assets/images/background.png";
+$addIcon: "../../assets/images/addIcon.svg";
+$browseIcon: "../../assets/images/browseIcon.svg";
+$homeIcon: "../../assets/images/homeIcon.svg";
+$menuIcon: "../../assets/images/burgermenuIcon.svg";
