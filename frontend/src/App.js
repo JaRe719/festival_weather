@@ -7,6 +7,7 @@ import All from './Pages/All/All';
 import Detail from './Pages/Detail/Detail';
 import NoPage from './Pages/NoPage/NoPage';
 import NotFound from './Pages/NotFound/NotFound';
+import "./App.scss";
 
 
 const App = () => {
